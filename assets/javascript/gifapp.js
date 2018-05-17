@@ -48,11 +48,16 @@ $(document).ready(function() {
                 var rating = data[i].rating;
                 var textLine = $("<p>").text("Rating:" + rating);
                 var gifImage = $("<img>");
+                //gifImage.attr("src", "data-gifffer");
                 gifImage.attr("src", data[i].images.fixed_height.url);
+               // gifImage.attr("data-gifffer=image.gif");
                 divImage.append(gifImage);
                 divImage.prepend("Rating:" + rating);
                 $("#gif-place").append(divImage);
+            
             }
-        })
+            //Gifffer();
+          })
+        
     })
 });
