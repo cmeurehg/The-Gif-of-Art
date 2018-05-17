@@ -1,6 +1,6 @@
 $(document).ready(function() {
     
-    var topics = ["Vincent van Gogh", "Pablo Picasso", "Rembrandt van Rijn", "Damien Hirst", "Francis Bacon", "Leonardo da Vinci", "Caravaggio"];
+    var topics = ["Vincent van Gogh", "Picasso", "Rembrandt van Rijn", "Damien Hirst", "Francis Bacon", "El Greco", "Caravaggio"];
 
     var newArtist
     
@@ -31,6 +31,7 @@ $(document).ready(function() {
 
     // function for adding the gifs to the page
     $(document).on('click', '.name-to-click', function(){
+        $("#gif-place").empty();
         var artist = $(this).attr("data-name");
         var artistURL = encodeURIComponent(artist.trim());
         var apiKey = "O2vVGnEDjNNy3RiaCdaeGIc1UATF3Za3";
@@ -49,7 +50,7 @@ $(document).ready(function() {
                 var gifImage = $("<img>");
                 gifImage.attr("src", data[i].images.fixed_height.url);
                 divImage.append(gifImage);
-                divImage.append(rating);
+                divImage.prepend("Rating:" + rating);
                 $("#gif-place").append(divImage);
             }
         })

@@ -1,0 +1,52 @@
+.image-place {
+    float: left;
+    margin: 0px;
+    padding: 10px;
+
+}
+
+#button-place {
+    padding: 20px;
+    border: 0px;
+    margin-top: 10px;
+       
+}
+
+.name-to-click {
+    border: 10px;
+    background-color: rgb(192, 48, 48);
+    margin: 3px;
+    color: white;
+    padding: 5px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border
+}
+
+p {
+    padding: 5px;
+    margin: 5px;
+}
+
+img {
+    margin: 10px;
+}
+
+label {
+    background-color: rgb(87, 94, 126);
+    
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+
+}
+
+#confirm-artist {
+    padding: 5px;
+    color: white;
+    background-color: blue;
+    margin-top: 10px;
+}
+
+
