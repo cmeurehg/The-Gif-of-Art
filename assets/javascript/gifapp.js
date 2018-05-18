@@ -56,21 +56,62 @@ $(document).ready(function() {
                 $("#gif-place").append(divImage);
             
             }
+            
+            
             //Gifffer(); could not make this function call work.  Instead:
 
-            $("img").on("click", function (){
 
-                var gif = $(this).attr("data-gif");
-                var image = $(this).attr("data-image");
-                var imgSource = $(this).attr("src");
 
-                if (imgSource.indexOf("_s") !=-1) {
-                    $(this).attr("src", gif);
-                } else {
-                    $(this).attr("src", image);
+            // $("img").on("click", function (){
+
+            //     var gif = $(this).attr("data-gif");
+            //     var image = $(this).attr("data-image");
+            //     var imgSource = $(this).attr("src");
+
+            //     if (imgSource.indexOf("_s") !=-1) {
+            //         $(this).attr("src", gif);
+            //     } else {
+            //         $(this).attr("src", image);
+            //     }
+
+            //     })
+
+                // Still cannot make this function work.  Need to trace the references,
+                // review the scope of variables and also understand .indexOf("_s") !=-1
+
+                // The next option comes from Andrew's link to David Walsh's site:
+
+
+                function getDataUri(url, callback) {
+                    var image = new Image();
+                
+                    image.onload = function () {
+                        var canvas = document.createElement('canvas');
+                        canvas.width = this.naturalWidth; // or 'width' if you want a special/scaled size
+                        canvas.height = this.naturalHeight; // or 'height' if you want a special/scaled size
+                
+                        canvas.getContext('2d').drawImage(this, 0, 0);
+                
+                        // Get raw image data
+                        callback(canvas.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, ''));
+                
+                        // ... or get as Data URI
+                        callback(canvas.toDataURL('image/png'));
+                    };
+                
+                    image.src = url;
                 }
+                
+                // Usage
+                getDataUri('/logo.png', function(dataUri) {
+                    // Do whatever you'd like with the Data URI!
+                });
 
-                })
+
+
+
+
+
 
             })
     
