@@ -56,8 +56,27 @@ $(document).ready(function() {
                 $("#gif-place").append(divImage);
             
             }
-            //Gifffer();
-          })
+            //Gifffer(); could not make this function call work.  Instead:
+
+            $("img").on("click", function (){
+
+                var gif = $(this).attr("data-gif");
+                var image = $(this).attr("data-image");
+                var imgSource = $(this).attr("src");
+
+                if (imgSource.indexOf("_s") !=-1) {
+                    $(this).attr("src", gif);
+                } else {
+                    $(this).attr("src", image);
+                }
+
+                })
+
+            })
+    
+            })
+
+
+          });
         
-    })
-});
+
