@@ -107,6 +107,8 @@ $(document).ready(function() {
                     // Do whatever you'd like with the Data URI!
                 });
 
+                
+
 
 
 
