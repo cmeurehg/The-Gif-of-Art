@@ -35,7 +35,7 @@ $(document).ready(function() {
         var artist = $(this).attr("data-name");
         var artistURL = encodeURIComponent(artist.trim());
         var apiKey = "O2vVGnEDjNNy3RiaCdaeGIc1UATF3Za3";
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + artistURL + "&api_key=" + apiKey + "&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + artistURL + "&api_key=" + apiKey + "&limit=10";
         console.log(queryURL)
         $.ajax({
             url: queryURL,
